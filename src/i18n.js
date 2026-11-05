@@ -1,7 +1,7 @@
 export const LANGS = [
+  { code: 'en', label: 'English' },
   { code: 'pa', label: 'ਪੰਜਾਬੀ' },
   { code: 'hi', label: 'हिंदी' },
-  { code: 'en', label: 'English' },
 ];
 
 const S = {
@@ -20,6 +20,7 @@ const S = {
     hi: 'फोटो खींचिए। समझो बताएगा यह क्या है, क्या करना है और कब तक।',
     pa: 'ਫੋਟੋ ਖਿੱਚੋ। ਸਮਝੋ ਦੱਸੇਗਾ ਇਹ ਕੀ ਹੈ, ਕੀ ਕਰਨਾ ਹੈ ਅਤੇ ਕਦੋਂ ਤੱਕ।',
   },
+  uploadPhoto: { en: 'Upload a picture', hi: 'फोटो अपलोड करें', pa: 'ਫੋਟੋ ਅਪਲੋਡ ਕਰੋ' },
   takePhoto: { en: 'Take a photo', hi: 'फोटो खींचें', pa: 'ਫੋਟੋ ਖਿੱਚੋ' },
   choosePhoto: { en: 'Choose from gallery', hi: 'गैलरी से चुनें', pa: 'ਗੈਲਰੀ ਵਿੱਚੋਂ ਚੁਣੋ' },
   tips: {
@@ -34,7 +35,7 @@ const S = {
     pa: 'ਨਕਲੀ ਜਾਣਕਾਰੀ ਵਾਲੇ ਨਮੂਨਾ ਕਾਗਜ਼',
   },
   demoMode: {
-    en: 'Demo version: you can try the examples below. Reading your own photos works in the full version.',
+    en: 'This is the demo version, so it can only show the examples below. Reading your own pictures works on the full version.',
     hi: 'डेमो वर्ज़न: नीचे दिए उदाहरण आज़माएं। अपनी फोटो पढ़ना पूरे वर्ज़न में चलता है।',
     pa: 'ਡੈਮੋ ਵਰਜ਼ਨ: ਹੇਠਾਂ ਦਿੱਤੇ ਉਦਾਹਰਣ ਵੇਖੋ। ਆਪਣੀ ਫੋਟੋ ਪੜ੍ਹਨਾ ਪੂਰੇ ਵਰਜ਼ਨ ਵਿੱਚ ਚੱਲਦਾ ਹੈ।',
   },

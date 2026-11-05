@@ -4,14 +4,15 @@ import { getSamples } from './samples.js';
 import { aiAvailable, explain } from './api.js';
 import { prepareFile } from './image.js';
 import { daysUntil } from './dates.js';
-import { getPref, setPref, getPapers, savePaper, removePaper, track } from './store.js';
+import { getPapers, savePaper, removePaper, track } from './store.js';
 import { stopSpeaking } from './speech.js';
 import Result from './screens/Result.jsx';
 import Research from './screens/Research.jsx';
 
 export default function App() {
-  const [lang, setLang] = useState(() => getPref('lang', 'pa'));
+  const [lang, setLang] = useState('en'); // always opens in English; users can switch
   const [ai, setAi] = useState(null); // null = checking
+  const [demoTap, setDemoTap] = useState(false);
   const [view, setView] = useState({ name: 'home' });
   const [papers, setPapers] = useState(getPapers);
   const cameraRef = useRef(null);
@@ -19,7 +20,7 @@ export default function App() {
   const samples = getSamples();
 
   useEffect(() => { track('session_start'); aiAvailable().then(setAi); }, []);
-  useEffect(() => { setPref('lang', lang); document.documentElement.lang = lang; }, [lang]);
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   const goHome = () => { stopSpeaking(); setPapers(getPapers()); setView({ name: 'home' }); };
 
@@ -123,18 +124,16 @@ export default function App() {
       <section className="hero">
         <h1>{t('heroTitle', lang)}</h1>
         <p>{t('heroSub', lang)}</p>
-        {ai === false && <p className="demo-note">{t('demoMode', lang)}</p>}
-        {ai !== false && (
-          <>
-            <button className="btn primary block big" disabled={ai === null} onClick={() => cameraRef.current?.click()}>
-              <span aria-hidden>📷</span> {t('takePhoto', lang)}
-            </button>
-            <button className="btn secondary block" disabled={ai === null} onClick={() => galleryRef.current?.click()}>
-              <span aria-hidden>🖼️</span> {t('choosePhoto', lang)}
-            </button>
-            <p className="tip">{t('tips', lang)}</p>
-          </>
-        )}
+        <button className="btn primary block big" disabled={ai === null}
+          onClick={() => (ai ? galleryRef.current?.click() : setDemoTap(true))}>
+          <span aria-hidden>⬆️</span> {t('uploadPhoto', lang)}
+        </button>
+        <button className="btn secondary block" disabled={ai === null}
+          onClick={() => (ai ? cameraRef.current?.click() : setDemoTap(true))}>
+          <span aria-hidden>📷</span> {t('takePhoto', lang)}
+        </button>
+        {ai === false && demoTap && <p className="demo-note" role="status">{t('demoMode', lang)}</p>}
+        <p className="tip">{t('tips', lang)}</p>
         <input ref={cameraRef} type="file" accept="image/*" capture="environment" hidden onChange={onFile} />
         <input ref={galleryRef} type="file" accept="image/*,application/pdf" hidden onChange={onFile} />
       </section>
