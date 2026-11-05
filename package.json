@@ -1,0 +1,24 @@
+{
+  "name": "samjho",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Samjho: point your phone at any official paper and understand what it means and what to do, in Punjabi, Hindi or English.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.js",
+    "eval": "node eval/run-eval.mjs",
+    "deploy:pages": "vite build && gh-pages -d dist --dotfiles"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.3",
+    "gh-pages": "6.2.0",
+    "vite": "5.4.10"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.local
+.vercel
+eval/docs/*
+!eval/docs/README.md
+eval/results-*.csv

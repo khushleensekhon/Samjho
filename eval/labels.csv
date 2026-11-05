@@ -1,0 +1,9 @@
+file,category,amount,deadline,scam,today,notes
+# One row per document in eval/docs/. Delete these example rows and add your own.
+# category: bill | bank | government | school | medical | insurance | legal | message | other
+# amount: main amount to pay, digits only (leave blank if none)
+# deadline: YYYY-MM-DD (leave blank if none)
+# scam: yes / no
+# today: optional, the date the paper was received (YYYY-MM-DD) so year guesses are fair
+example-electricity-bill.jpg,bill,2340,2026-11-18,no,2026-11-05,electricity bill from home
+example-kyc-sms.png,message,,,yes,2026-11-05,fake KYC SMS forwarded by uncle
