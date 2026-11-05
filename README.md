@@ -4,7 +4,7 @@
 
 Samjho reads a photo of a bill, bank letter, government notice, school notice or SMS, and explains it in simple **Punjabi, Hindi or English**: what it is, what you need to do, how much, by when, and whether it looks like a scam. It can read the answer aloud, add a reminder, and send it to a family member on WhatsApp.
 
-**Try it:** [khushleensekhon.github.io/samjho](https://khushleensekhon.github.io/samjho/) (demo with example papers)
+**Try it:** [khushleensekhon.github.io/Samjho](https://khushleensekhon.github.io/Samjho/) (demo with example papers)
 
 ## The problem
 
